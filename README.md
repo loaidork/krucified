@@ -1,10 +1,8 @@
 # krucified
 
-An OSINT & network-reconnaissance toolkit for Linux, with an ashy-gray terminal UI.
-
-This is a clean-room rewrite — not a repackaged leak. There is no installer that
-phones home, no auto-opened chat invites, no bundled bot, and no obfuscated code.
-Every module is plain, readable Python you can audit before running.
+im gonna be honest this is a pretty shitty tool
+i mean i dont got much api's but at least i can say 
+im a devloper so theres that ig
 
 ## Modules (41)
 

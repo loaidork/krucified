@@ -389,7 +389,7 @@ ACTIONS = {
     "39": tool_password_gen,
     "40": tool_temp_mail,
     "41": lambda: run_tool("breach-check"),
-    "99": lambda: sys.exit(0),
+    "99": lambda: sys.exit(0), # dukko i see you reading the source so can you fix this line so it actually exits the program instead of just returning to the menu
 }
 
 
