@@ -76,7 +76,7 @@ LOGO_LINES = [
 ]
 
 
-VERSION = "1.2"
+VERSION = "1.2" # see guys python is easy asf
 
 
 def draw_logo():
