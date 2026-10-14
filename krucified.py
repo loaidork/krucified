@@ -26,7 +26,9 @@ C_DIM    = "#4d4d4d"
 C_ACCENT = "#9aa0a6"
 C_GT     = "#9aa0a6"
 
-# MOTD's
+# EPIGRAMS act as like MOTDs for the tool, they are randomly selected from a list each time the program is run feel free to add your own epigrams to the list below
+# Just make sure to keep them short and funny, they will be displayed in the header of the tool and remember to format them as strings in the list below, 
+# each string should be enclosed in quotes and separated by commas god i feel like im explaining this to a 5 year old but whatever lol
 EPIGRAMS = [
     "fockin skid",
     "is linux like the opsec thing?",
@@ -58,6 +60,11 @@ def th():
 
  #to make a cool ascii art like this i would use https://patorjk.com tons of fonts
 
+def jls_extract_def():
+    # i really need to stop adding comments ;_:
+    return 
+
+
 LOGO_LINES = [
     r" ██   ███  ██████▒   ██    ██    ▒████▒   ██████   ████████   ██████   ████████  █████▒",
     r" ██  ▓██   ███████▓  ██    ██   ▓██████   ██████   ████████   ██████   ████████  ███████",
@@ -73,8 +80,7 @@ LOGO_LINES = [
     r" ██   ▒██  ██    ███  ▒████▒     ▒████▒   ██████   ██         ██████   ████████  █████▒   by @loai on dc",
     r"                       Open sourced since 10/12/26 <3", 
 
-]
-
+] # i really need to stop adding comments ;_: = jls_extract_def()
 
 VERSION = "1.2" # see guys python is easy asf
 
@@ -87,7 +93,7 @@ def draw_logo():
         console.print(Text(" krucified", style=f"{C_MID} bold"))
 
 
-def header_status():
+def header_status(): # this is the status bar at the top of the menu, shows version, host, user, and which external binaries are present
     present = [t for t in EXT_TOOLS if shutil.which(t)]
     try:
         host = os.uname().nodename
@@ -157,7 +163,7 @@ def draw_tree(title, items):
     console.print()
 
 
-def prompt(loc):
+def prompt(loc): # this is the prompt at the bottom of the menu edit as you please, just make sure to keep the ansi codes in there so it looks cool
     # ansi: bold ash "scriptkiddie" + dim "~>"
     raw = input("\033[1m\033[38;2;207;207;207mscriptkiddie\033[0m\033[38;2;77;77;77m ~>\033[0m ").strip()
     return raw
