@@ -60,11 +60,6 @@ def th():
 
  #to make a cool ascii art like this i would use https://patorjk.com tons of fonts
 
-def jls_extract_def():
-    # i really need to stop adding comments ;_:
-    return 
-
-
 LOGO_LINES = [
     r" ██   ███  ██████▒   ██    ██    ▒████▒   ██████   ████████   ██████   ████████  █████▒",
     r" ██  ▓██   ███████▓  ██    ██   ▓██████   ██████   ████████   ██████   ████████  ███████",
@@ -80,7 +75,8 @@ LOGO_LINES = [
     r" ██   ▒██  ██    ███  ▒████▒     ▒████▒   ██████   ██         ██████   ████████  █████▒   by @loai on dc",
     r"                       Open sourced since 10/12/26 <3", 
 
-] # i really need to stop adding comments ;_: = jls_extract_def()
+] # i really need to stop adding comments 
+
 
 VERSION = "1.2" # see guys python is easy asf
 
@@ -346,6 +342,7 @@ DECK = [
         ("36", "epoch converter"),    ("37", "id / token gen"),
         ("38", "password strength"),  ("39", "password generator"),
         ("40", "temp mail"),          ("41", "breach self-check"),
+        ("99", "exit"),
     ]),
     ("navlast", "Q", "quit"),
 ]
@@ -392,6 +389,7 @@ ACTIONS = {
     "39": tool_password_gen,
     "40": tool_temp_mail,
     "41": lambda: run_tool("breach-check"),
+    "99": lambda: sys.exit(0),
 }
 
 
