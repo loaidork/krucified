@@ -217,7 +217,7 @@ def tool_username_hunter():
     u = input(f"{_ansi(C_MID)}  username >> \033[0m").strip()
     if not u:
         return
-    console.print(Text.from_markup(f"[{C_MID} bold]  Results for : {u}"))
+    console.print(Text.from_markup(f"[{C_MID} bold]  Results for : {u}")) # this tool is so shitty aghh
     _open_links([
         ("GitHub",    f"https://github.com/{u}"),
         ("Twitter/X", f"https://x.com/{u}"),
