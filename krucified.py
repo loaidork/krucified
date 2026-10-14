@@ -4,7 +4,7 @@
  free to use this code however you please! after all if i didnt 
  want you to how could i stop you lol anyways enjoy!
 """
-import os, sys, time, shutil, subprocess, webbrowser, random, string
+import os, sys, time, shutil, subprocess, webbrowser, random, string, time
 
 from rich.console import Console
 from rich.panel   import Panel
@@ -28,7 +28,7 @@ C_GT     = "#9aa0a6"
 
 # EPIGRAMS act as like MOTDs for the tool, they are randomly selected from a list each time the program is run feel free to add your own epigrams to the list below
 # Just make sure to keep them short and funny, they will be displayed in the header of the tool and remember to format them as strings in the list below, 
-# each string should be enclosed in quotes and separated by commas god i feel like im explaining this to a 5 year old but whatever lol
+# each string should be enclosed in quotes and separated by commas god i feel like im explaining this to a 5 year old  lmao
 EPIGRAMS = [
     "fockin skid",
     "is linux like the opsec thing?",
@@ -36,8 +36,24 @@ EPIGRAMS = [
     "got root?",
     "Privacy is a human right",
     "nullsec is full of skids",
+    "nuzzles ur opsec >w<",
+    "use librewolf and cuz tor is fedded",
+    "im scared someone kiss me",
+    "python is easy asf",
+    "femboys love gentoo",
+    "owo whats this? *sudo rm -rf /'s you cutely*",
+    "as im writing this MOTD im at my bus stop and im freezing my ass off",
+    "the rumors that everyone who downloads gets aids is false only omarchy users get aids",
+    "*live love slowloris*",
+    "cybercrime is bad",
+    "sillydukko is a skid",
+    "nmap warrior",
+    "if i was as good at html as i was at python i still wouldnt be very good",
+    "at this point im just writing random shit",
+    "Code OSS has some really good themes ngl",
+    "support open source developers!",
 ]
-EPIGRAM = random.choice(EPIGRAMS)
+EPIGRAM = random.choice(EPIGRAMS) 
 
 HERE  = os.path.dirname(os.path.abspath(__file__))
 TOOLS = os.path.join(HERE, "LOGO_LINES")
@@ -67,18 +83,19 @@ LOGO_LINES = [
     r" ██░██▒    ██    ██  ██    ██  ██▓          ██     ██           ██     ██        ██   ▒██",
     r" ████▒     ██   ▒██  ██    ██  ██░          ██     ██           ██     ██        ██   ░██",
     r" ███▓      ███████▒  ██    ██  ██           ██     ███████      ██     ███████   ██    ██",
-    r" █████▒    ██████▓   ██    ██  ██           ██     ███████      ██     ███████   ██    ██", # yknow sometimes ascii in a multitool really makes me feel like a skid lol
+    r" █████▒    ██████▓   ██    ██  ██           ██     ███████      ██     ███████   ██    ██", # love me some ascii artss
     r" ██▒▒██    ██  ▓██░  ██    ██  ██░          ██     ██           ██     ██        ██   ░██",
     r" ██  ██▓   ██   ██▓  ██    ██  ██▓          ██     ██           ██     ██        ██   ▒██",
     r" ██  ▒██   ██   ▒██  ██▓  ▓██  ▒██▒  ░█     ██     ██           ██     ██        ██  ▒██▒",
     r" ██   ██▓  ██    ██▒ ▒██████▒   ▓██████   ██████   ██         ██████   ████████  ███████",
     r" ██   ▒██  ██    ███  ▒████▒     ▒████▒   ██████   ██         ██████   ████████  █████▒   by @loai on dc",
-    r"                       Open sourced since 10/12/26 <3", 
+    r"",                       
+    r"              Open sourced since 10/12/26 <3 in developement ever since.                      ", 
 
 ] # i really need to stop adding comments 
 
 
-VERSION = "1.2" # see guys python is easy asf
+VERSION = "1.3 BETA" # see guys python is easy asf
 
 
 def draw_logo():
@@ -113,7 +130,7 @@ def draw_header():
     console.print()
     draw_logo()
     console.print(header_status())
-    console.print(Text.from_markup(f"  [{C_GT}]> {EPIGRAM}"))
+    console.print(Text.from_markup(f"  [{C_GT}]~> {EPIGRAM}"))
     console.print(f"[{C_DEEP}] " + "─" * (tw() - 2))
 
 
@@ -162,7 +179,7 @@ def draw_tree(title, items):
 def prompt(loc): # this is the prompt at the bottom of the menu edit as you please, just make sure to keep the ansi codes in there so it looks cool
     # ansi: bold ash "scriptkiddie" + dim "~>"
     raw = input("\033[1m\033[38;2;207;207;207mscriptkiddie\033[0m\033[38;2;77;77;77m ~>\033[0m ").strip()
-    return raw
+    return raw 
 
 
 def show(loc, title, items):
@@ -213,7 +230,7 @@ def _open_links(pairs):
 
 # inline tools that are just a bunch of links to public services, no local binaries needed
 def tool_username_hunter():
-    _panel("USERNAME HUNTER", "Check a username across public platforms")
+    _panel("USERNAME HUNTER", "Find a basic username accross platforms")
     u = input(f"{_ansi(C_MID)}  username >> \033[0m").strip()
     if not u:
         return
@@ -318,7 +335,7 @@ DECK = [
         ("07", "dns-over-https"),  ("08", "domain intel"),
         ("09", "subdomain enum"),  ("10", "whois"),
         ("11", "asn lookup"),      ("12", "email validator"),
-        ("13", "username hunter"), ("  ", ""),
+        ("13", "username hunter"), 
     ]),
     ("cat", "network and like portscanning"),
     ("cols", [
@@ -342,6 +359,7 @@ DECK = [
         ("36", "epoch converter"),    ("37", "id / token gen"),
         ("38", "password strength"),  ("39", "password generator"),
         ("40", "temp mail"),          ("41", "breach self-check"),
+        ("42", "OSINT Framework"),    ("43", "give loai XMR"),
         ("99", "exit"),
     ]),
     ("navlast", "Q", "quit"),
@@ -389,7 +407,10 @@ ACTIONS = {
     "39": tool_password_gen,
     "40": tool_temp_mail,
     "41": lambda: run_tool("breach-check"),
-    "99": lambda: sys.exit(0), # dukko i see you reading the source so can you fix this line so it actually exits the program instead of just returning to the menu
+    "42": lambda: webbrowser.open("https://osintframework.com/"),
+    "43": lambda: webbrowser.open("https://ihatepython.org"),
+    "99": lambda: sys.exit(0), # this should work now i hope
+
 }
 
 
@@ -405,8 +426,10 @@ def main_menu():
         if action:
             action()
         # unknown input just redraws the deck
-
-
+def sys_exit(): 
+    cls()
+    console.print(f"[{C_GT}]  > baiii\n")
+    sys.exit(0)
 if __name__ == "__main__":
     try:
         sys.stdout.write("\x1b]2;krucified\x07")
