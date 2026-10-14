@@ -9,7 +9,7 @@ Every module is plain, readable Python you can audit before running.
 ## Modules (41)
 
 **recon**
-- OSINT Framework (link)
+- Doxbin ( literally just a link lmao )
 - IP Lookup — geolocation / org / ASN via ipinfo
 - IP Geolocation — geo via ip-api
 - IP Operator / ASN
