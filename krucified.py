@@ -314,6 +314,15 @@ def tool_password_gen():
     console.print()
     input("\033[38;2;77;77;77m  [enter]\033[0m")
 
+def tool_xmr_services(): 
+    _panel("XMR SERVICES", "Wallets and local miners")
+    console.print(Text.from_markup(f"[{C_MID} bold] Wallets and simple mining tools"))
+    _open_links([
+        ("thing 3", "https://google.com/"),
+        ("thing 2", "https://google.com/"),
+        ("thing 1", "https://google.com/"),
+    ])
+
 
 def tool_temp_mail():
     _panel("TEMP MAIL", "Disposable inbox services")
@@ -351,7 +360,7 @@ DECK = [
         ("26", "url expander"),     ("27", "tech fingerprint"),
         ("28", "robots / sitemap"), ("29", "wayback machine"),
     ]),
-    ("cat", "general utils"),
+    ("cat", "general utils and XMR"),
     ("cols", [
         ("30", "mac vendor lookup"),  ("31", "hash lookup"),
         ("32", "hash identifier"),    ("33", "encoder / decoder"),
@@ -360,7 +369,7 @@ DECK = [
         ("38", "password strength"),  ("39", "password generator"),
         ("40", "temp mail"),          ("41", "breach self-check"),
         ("42", "OSINT Framework"),    ("43", "give loai XMR"),
-        ("99", "exit"),
+        ("44", "XMR services"),       ("99", "exit"),
     ]),
     ("navlast", "Q", "quit"),
 ]
@@ -409,6 +418,7 @@ ACTIONS = {
     "41": lambda: run_tool("breach-check"),
     "42": lambda: webbrowser.open("https://osintframework.com/"),
     "43": lambda: webbrowser.open("https://ihatepython.org"),
+    "44": lambda: tool_xmr_services,
     "99": lambda: sys.exit(0), # this should work now i hope
 
 }
@@ -416,11 +426,11 @@ ACTIONS = {
 
 def main_menu():
     while True:
-        o = show("krx", "select ur tool skid", DECK)
+        o = show("scriptkiddie", "select ur tool skid", DECK)
         s = o.strip()
         if s.upper() == "Q":
             cls()
-            console.print(f"[{C_GT}]  > baiii\n")
+            console.print(f"[{C_GT}]  > cya later!\n")
             sys.exit(0)
         action = ACTIONS.get(s.zfill(2) if s.isdigit() else s.upper())
         if action:
@@ -428,7 +438,7 @@ def main_menu():
         # unknown input just redraws the deck
 def sys_exit(): 
     cls()
-    console.print(f"[{C_GT}]  > baiii\n")
+    console.print(f"[{C_GT}]  > cya later!\n")
     sys.exit(0)
 if __name__ == "__main__":
     try:
